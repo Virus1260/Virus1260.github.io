@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Date And Time</title>
+
+    <script>
+      function display_ct6() {
+        var x = new Date();
+        var ampm = x.getHours() >= 12 ? " PM" : " AM";
+        hours = x.getHours() % 12;
+        hours = hours ? hours : 12;
+        var x1 =
+          "<h1>Date : " +
+          x.getDate() +
+          "/" +
+          x.getMonth() +
+          "/" +
+          x.getFullYear() +
+          "</h1>";
+        x1 =
+          x1 +
+          "<h2 > Time :  " +
+          hours +
+          ":" +
+          x.getMinutes() +
+          ":" +
+          x.getSeconds() +
+          "" +
+          ampm +
+          "</h2>";
+        document.getElementById("ct6").innerHTML = x1;
+        display_c6();
+      }
+
+      function display_c6() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("display_ct6()", refresh);
+      }
+      display_c6();
+    </script>
+
+    <p id="ct6" style="color: rgb(0, 26, 255)"></p>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(
+          rgb(33, 160, 192),
+          rgb(208, 255, 0),
+          rgb(137, 75, 207)
+        );
+      }
+    </style>
+  </head>
+
+  <body onload="display_ct();">
+    <p id="ct"></p>
+
+    <img src="clock-time.gif" alt="watch" />
+    <!-- <br /> -->
+
+    <iframe
+      src="https://arkadia.xyz/"
+      frameborder="0px"
+      height="680px"
+      width="1180px"
+      
+    ></iframe>
+  </body>
+</html>
